@@ -13,12 +13,13 @@
         .font-punchline { font-family: 'Lora', serif; }
         .font-body { font-family: 'Poppins', sans-serif; }
         body {
-            background-color: #1a1a1a;
-            background-image: linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.95)), url('https://www.transparenttextures.com/patterns/dark-wood.png');
-            background-size: 300px 300px, 300px 300px;
+            /* New: Dark charcoal to black gradient background */
+            background-color: #111111;
+            background-image: linear-gradient(180deg, #111111 0%, #000000 100%);
             background-attachment: fixed;
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
+            color: #F0F0F0; /* Off-white text for better readability */
         }
         #animation-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -27,7 +28,7 @@
         .legal-icon {
             position: absolute;
             bottom: -150px;
-            color: rgba(249, 168, 212, 0.05); /* Faint Glowing Pink */
+            color: rgba(196, 165, 106, 0.05); 
             animation: floatUp 20s infinite linear;
             font-size: 4rem;
         }
@@ -36,31 +37,32 @@
             25% { opacity: 1; } 75% { opacity: 1; }
             to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
         }
-        .text-glow-pink {
-            color: #f9a8d4;
-            text-shadow: 0 0 8px rgba(249, 168, 212, 0.4), 0 0 20px rgba(249, 168, 212, 0.5);
+        .text-glow-gold {
+            color: #C4A56A;
+            text-shadow: 0 0 8px rgba(196, 165, 106, 0.4), 0 0 20px rgba(196, 165, 106, 0.5);
         }
         .btn-action {
-            background-color: #3b82f6; color: white;
+            background-color: #C4A56A; 
+            color: #111111; /* Updated text color for contrast */
             padding: 0.75rem 1.5rem; border-radius: 0.5rem;
             font-weight: bold; transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            border: 1px solid rgba(196, 165, 106, 0.5);
+            box-shadow: 0 0 15px rgba(196, 165, 106, 0.5);
         }
         .btn-action:hover {
-            background-color: #2563eb;
+            background-color: #d4b57a;
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+            box-shadow: 0 0 25px rgba(196, 165, 106, 0.8);
         }
         .crystal-card {
-            background: rgba(41, 41, 41, 0.4);
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(196, 165, 106, 0.2);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             transition: all 0.3s ease;
         }
          .crystal-card:hover {
-            border: 1px solid rgba(249, 168, 212, 0.5);
+            border: 1px solid rgba(196, 165, 106, 0.7);
             transform: translateY(-5px);
         }
         .faq-toggle[aria-expanded="true"] span {
@@ -68,18 +70,18 @@
         }
     </style>
 </head>
-<body class="font-body text-gray-300">
+<body class="font-body text-gray-200">
 
     <div id="animation-container"></div>
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-white/10">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-gold-400/10" style="border-color: rgba(196, 165, 106, 0.2);">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-logo text-3xl font-black text-glow-pink">LexiFy</a>
+            <a href="#" class="font-logo text-3xl font-black text-glow-gold">LexiFy</a>
             <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#features" class="hover:text-pink-300 transition-colors">Features</a>
-                <a href="#testimonials" class="hover:text-pink-300 transition-colors">Testimonials</a>
-                <a href="#faq" class="hover:text-pink-300 transition-colors">FAQ</a>
-                <a href="terms.html" class="hover:text-pink-300 transition-colors">Terms</a>
+                <a href="#features" class="hover:text-gold-300 transition-colors" style="color: rgba(220, 195, 145, 1);">Features</a>
+                <a href="#testimonials" class="hover:text-gold-300 transition-colors" style="color: rgba(220, 195, 145, 1);">Testimonials</a>
+                <a href="#faq" class="hover:text-gold-300 transition-colors" style="color: rgba(220, 195, 145, 1);">FAQ</a>
+                <a href="terms.html" class="hover:text-gold-300 transition-colors" style="color: rgba(220, 195, 145, 1);">Terms</a>
                 <a href="app.html" class="btn-action">Launch App</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
@@ -91,13 +93,13 @@
             <a href="#testimonials" class="block py-2 px-6 text-sm hover:bg-gray-800">Testimonials</a>
             <a href="#faq" class="block py-2 px-6 text-sm hover:bg-gray-800">FAQ</a>
             <a href="terms.html" class="block py-2 px-6 text-sm hover:bg-gray-800">Terms</a>
-            <a href="app.html" class="block py-2 px-6 text-sm bg-blue-600 text-white">Launch App</a>
+            <a href="app.html" class="block py-3 px-6 text-sm text-center font-bold" style="background-color: #C4A56A; color: #111111;">Launch App</a>
         </div>
     </header>
 
     <main class="relative z-10 pt-32">
         <section class="text-center pb-20 px-6">
-            <h1 class="font-logo text-7xl md:text-8xl font-black text-glow-pink">LexiFy</h1>
+            <h1 class="font-logo text-7xl md:text-8xl font-black text-glow-gold">LexiFy</h1>
             <h2 class="font-punchline text-3xl md:text-4xl font-medium text-white leading-tight mb-6">Your Personal AI Paralegal.</h2>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">Stop guessing, start understanding. Translate complex legal jargon into simple, actionable insights with the power of Generative AI.</p>
             <a href="app.html" class="btn-action text-lg">Analyze Your First Document Free</a>
@@ -105,18 +107,18 @@
         
         <section id="features" class="py-20 px-6">
             <div class="container mx-auto">
-                <h2 class="font-logo text-5xl font-black text-center mb-12 text-glow-pink">Core Capabilities</h2>
+                <h2 class="font-logo text-5xl font-black text-center mb-12 text-glow-gold">Core Capabilities</h2>
                 <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <div class="crystal-card p-8 rounded-xl text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">Document Upload</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-glow-gold">Document Upload</h3>
                         <p>Easily upload your PDF or TXT legal documents to begin the analysis process.</p>
                     </div>
                     <div class="crystal-card p-8 rounded-xl text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">Core AI Analysis</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-glow-gold">Core AI Analysis</h3>
                         <p>Our AI reviews your document to identify risks, summarize key points, and provide a simple risk score.</p>
                     </div>
                     <div class="crystal-card p-8 rounded-xl text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">Results Visualization</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-glow-gold">Results Visualization</h3>
                         <p>View the analysis in a clean, easy-to-read report with our Vigilance Meter and clear summaries.</p>
                     </div>
                 </div>
@@ -125,7 +127,7 @@
 
         <section id="testimonials" class="py-20 px-6">
             <div class="container mx-auto text-center">
-                <h2 class="font-logo text-5xl font-black mb-12 text-glow-pink">Trusted by Innovators</h2>
+                <h2 class="font-logo text-5xl font-black mb-12 text-glow-gold">Trusted by Innovators</h2>
                 <div class="max-w-3xl mx-auto relative">
                     <div id="testimonial-scroller" class="flex overflow-x-hidden snap-x snap-mandatory">
                         <!-- Testimonials will be injected here by JS -->
@@ -138,7 +140,7 @@
 
         <section id="faq" class="py-20 px-6">
             <div class="container mx-auto max-w-4xl">
-                <h2 class="font-logo text-5xl font-black text-center mb-12 text-glow-pink">Frequently Asked Questions</h2>
+                <h2 class="font-logo text-5xl font-black text-center mb-12 text-glow-gold">Frequently Asked Questions</h2>
                 <div class="space-y-4">
                     <!-- FAQ Items will be injected here by JS -->
                 </div>
@@ -146,7 +148,7 @@
         </section>
     </main>
 
-    <footer class="border-t border-white/10 py-8 text-center mt-10 relative z-10">
+    <footer class="border-t border-gold-400/10 py-8 text-center mt-10 relative z-10" style="border-color: rgba(196, 165, 106, 0.2);">
         <p class="text-gray-400">&copy; 2025 LexiFy. All Rights Reserved.</p>
     </footer>
     
@@ -184,7 +186,7 @@
             scroller.innerHTML = testimonials.map(t => `
                 <div class="flex-shrink-0 w-full snap-center p-4">
                     <div class="crystal-card p-8 rounded-xl h-full">
-                        <p class="font-punchline text-2xl italic mb-4 text-glow-pink">"${t.quote}"</p>
+                        <p class="font-punchline text-2xl italic mb-4 text-glow-gold">"${t.quote}"</p>
                         <p class="font-bold text-gray-300">- ${t.author}</p>
                     </div>
                 </div>
@@ -210,7 +212,7 @@
         const faqContainer = document.querySelector('#faq .space-y-4');
         faqContainer.innerHTML = faqs.map(faq => `
             <div class="crystal-card rounded-lg">
-                <button class="faq-toggle w-full text-left p-4 font-semibold text-lg flex justify-between items-center text-glow-pink" aria-expanded="false">
+                <button class="faq-toggle w-full text-left p-4 font-semibold text-lg flex justify-between items-center text-glow-gold" aria-expanded="false">
                     ${faq.q}
                     <span class="transform transition-transform text-2xl">+</span>
                 </button>
