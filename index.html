@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexiFy - Your Personal AI Paralegal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Lora:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .font-logo { font-family: 'Playfair Display', serif; }
+        .font-punchline { font-family: 'Lora', serif; }
+        .font-body { font-family: 'Poppins', sans-serif; }
+        body {
+            background-color: #1a1a1a;
+            background-image: linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.95)), url('https://www.transparenttextures.com/patterns/dark-wood.png');
+            background-size: 300px 300px, 300px 300px;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        #animation-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; overflow: hidden;
+        }
+        .legal-icon {
+            position: absolute;
+            bottom: -150px;
+            color: rgba(249, 168, 212, 0.05); /* Faint Glowing Pink */
+            animation: floatUp 20s infinite linear;
+            font-size: 4rem;
+        }
+        @keyframes floatUp {
+            from { transform: translateY(0) rotate(0deg); opacity: 0; }
+            25% { opacity: 1; } 75% { opacity: 1; }
+            to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+        }
+        .text-glow-pink {
+            color: #f9a8d4;
+            text-shadow: 0 0 8px rgba(249, 168, 212, 0.4), 0 0 20px rgba(249, 168, 212, 0.5);
+        }
+        .btn-action {
+            background-color: #3b82f6; color: white;
+            padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+            font-weight: bold; transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+        .btn-action:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+        }
+        .crystal-card {
+            background: rgba(41, 41, 41, 0.4);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.3s ease;
+        }
+         .crystal-card:hover {
+            border: 1px solid rgba(249, 168, 212, 0.5);
+            transform: translateY(-5px);
+        }
+        .faq-toggle[aria-expanded="true"] span {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="font-body text-gray-300">
+
+    <div id="animation-container"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-logo text-3xl font-black text-glow-pink">LexiFy</a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#features" class="hover:text-pink-300 transition-colors">Features</a>
+                <a href="#testimonials" class="hover:text-pink-300 transition-colors">Testimonials</a>
+                <a href="#faq" class="hover:text-pink-300 transition-colors">FAQ</a>
+                <a href="terms.html" class="hover:text-pink-300 transition-colors">Terms</a>
+                <a href="app.html" class="btn-action">Launch App</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-black/50 backdrop-blur-lg">
+            <a href="#features" class="block py-2 px-6 text-sm hover:bg-gray-800">Features</a>
+            <a href="#testimonials" class="block py-2 px-6 text-sm hover:bg-gray-800">Testimonials</a>
+            <a href="#faq" class="block py-2 px-6 text-sm hover:bg-gray-800">FAQ</a>
+            <a href="terms.html" class="block py-2 px-6 text-sm hover:bg-gray-800">Terms</a>
+            <a href="app.html" class="block py-2 px-6 text-sm bg-blue-600 text-white">Launch App</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-32">
+        <section class="text-center pb-20 px-6">
+            <h1 class="font-logo text-7xl md:text-8xl font-black text-glow-pink">LexiFy</h1>
+            <h2 class="font-punchline text-3xl md:text-4xl font-medium text-white leading-tight mb-6">Your Personal AI Paralegal.</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">Stop guessing, start understanding. Translate complex legal jargon into simple, actionable insights with the power of Generative AI.</p>
+            <a href="app.html" class="btn-action text-lg">Analyze Your First Document Free</a>
+        </section>
+        
+        <section id="features" class="py-20 px-6">
+            <div class="container mx-auto">
+                <h2 class="font-logo text-5xl font-black text-center mb-12 text-glow-pink">Core Capabilities</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="crystal-card p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">Smart Dashboard</h3>
+                        <p>Visually extracts key dates, financials, and participants so you see what matters, instantly.</p>
+                    </div>
+                    <div class="crystal-card p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">AI-Powered Analysis</h3>
+                        <p>Get a crystal-clear summary, a breakdown of obligations, and a list of potential risks in seconds.</p>
+                    </div>
+                    <div class="crystal-card p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">Negotiation Simulator</h3>
+                        <p>Redraft unfavorable clauses with AI suggestions to strengthen your position before you sign.</p>
+                    </div>
+                    <div class="crystal-card p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">Comparative "Redline"</h3>
+                        <p>Upload two versions of a document and instantly see a summary of all material changes.</p>
+                    </div>
+                    <div class="crystal-card p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">E-Signature</h3>
+                        <p>Complete the workflow by signing your document directly in the app once you're satisfied.</p>
+                    </div>
+                    <div class="crystal-card p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">AI Contract Drafting</h3>
+                        <p>Generate new legal contracts from scratch based on your needs. Just describe the agreement, and our AI will draft a starting point for you.</p>
+                    </div>
+                    <div class="crystal-card p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">Language Translator</h3>
+                        <p>Translate legal documents from other languages into English for seamless analysis.</p>
+                    </div>
+                    <div class="crystal-card p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-glow-pink">Vigilance Meter</h3>
+                        <p>Receive an AI-generated score from 1-10 indicating the overall risk level of the document.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 px-6">
+            <div class="container mx-auto text-center">
+                <h2 class="font-logo text-5xl font-black mb-12 text-glow-pink">Trusted by Innovators</h2>
+                <div class="max-w-3xl mx-auto relative">
+                    <div id="testimonial-scroller" class="flex overflow-x-hidden snap-x snap-mandatory">
+                        <!-- Testimonials will be injected here by JS -->
+                    </div>
+                    <button id="prev-testimonial" class="absolute top-1/2 left-0 -translate-x-12 -translate-y-1/2 bg-white/10 p-2 rounded-full hover:bg-white/20 transition">&lt;</button>
+                    <button id="next-testimonial" class="absolute top-1/2 right-0 translate-x-12 -translate-y-1/2 bg-white/10 p-2 rounded-full hover:bg-white/20 transition">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-20 px-6">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="font-logo text-5xl font-black text-center mb-12 text-glow-pink">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <!-- FAQ Items will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-center mt-10 relative z-10">
+        <p class="text-gray-400">&copy; 2025 LexiFy. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        // --- Animated Background ---
+        const icons = ['⚖️', '📜', '🖋️', '🏛️', '📖', '👨‍💼'];
+        const container = document.getElementById('animation-container');
+        for (let i = 0; i < 20; i++) {
+            const icon = document.createElement('div');
+            icon.classList.add('legal-icon');
+            icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+            icon.style.left = `${Math.random() * 100}vw`;
+            icon.style.animationDuration = `${Math.random() * 15 + 10}s`;
+            icon.style.animationDelay = `${Math.random() * 10}s`;
+            container.appendChild(icon);
+        }
+
+        // --- Mobile Menu ---
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // --- Testimonials ---
+        const testimonials = [
+            { quote: "An indispensable tool for founders. The Vigilance Meter saved me hours of manual review.", author: "Priya K., Founder of ClimateTech Innovations" },
+            { quote: "The multilingual support is a game-changer. I can now analyze international contracts with ease.", author: "Elena R., Import/Export Manager" },
+            { quote: "Simple, powerful, and beautifully designed. This is what modern software should be.", author: "David L., Tech Blogger" },
+            { quote: "As a student, LexiFy helps me understand complex academic papers and terms. It's my secret weapon.", author: "Sameer V., Law Student" },
+            { quote: "The chat feature is incredibly helpful for clarifying specific clauses I don't understand.", author: "Maria G., Freelancer" }
+        ];
+        const scroller = document.getElementById('testimonial-scroller');
+        let currentTestimonial = 0;
+        
+        function renderTestimonials() {
+            scroller.innerHTML = testimonials.map(t => `
+                <div class="flex-shrink-0 w-full snap-center p-4">
+                    <div class="crystal-card p-8 rounded-xl h-full">
+                        <p class="font-punchline text-2xl italic mb-4 text-glow-pink">"${t.quote}"</p>
+                        <p class="font-bold text-gray-300">- ${t.author}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function scrollTestimonial(direction) {
+            currentTestimonial = (currentTestimonial + direction + testimonials.length) % testimonials.length;
+            scroller.scrollTo({ left: scroller.clientWidth * currentTestimonial, behavior: 'smooth' });
+        }
+        document.getElementById('prev-testimonial').addEventListener('click', () => scrollTestimonial(-1));
+        document.getElementById('next-testimonial').addEventListener('click', () => scrollTestimonial(1));
+        renderTestimonials();
+
+        // --- FAQs ---
+        const faqs = [
+            { q: "Is this a replacement for a lawyer?", a: "No. LexiFy is a powerful AI tool for understanding and should not be considered legal advice. We always recommend consulting a qualified legal professional for critical matters." },
+            { q: "What file formats can I upload?", a: "You can upload PDF, TXT, JPG, and PNG files. The app is optimized for text-based documents and images with clear text for the highest accuracy." },
+            { q: "How secure is my data?", a: "Security is our top priority. Your documents are transmitted over SSL, processed in memory, and are never stored on our servers after the analysis is complete." },
+            { q: "Can I use this for any type of document?", a: "While it's optimized for legal documents like contracts and leases, you can upload any text-based document for summarization and analysis. The risk analysis features work best on legal text." },
+            { q: "Do you offer plans for teams or businesses?", a: "We are currently focused on providing the best possible tool for individuals. Team and enterprise plans with collaborative features are on our roadmap for the future!" }
+        ];
+        const faqContainer = document.querySelector('#faq .space-y-4');
+        faqContainer.innerHTML = faqs.map(faq => `
+            <div class="crystal-card rounded-lg">
+                <button class="faq-toggle w-full text-left p-4 font-semibold text-lg flex justify-between items-center text-glow-pink" aria-expanded="false">
+                    ${faq.q}
+                    <span class="transform transition-transform text-2xl">+</span>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <p class="p-4 pt-0">${faq.a}</p>
+                </div>
+            </div>
+        `).join('');
+
+        faqContainer.addEventListener('click', (e) => {
+            const toggle = e.target.closest('.faq-toggle');
+            if (toggle) {
+                const content = toggle.nextElementSibling;
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                content.style.maxHeight = isExpanded ? '0px' : content.scrollHeight + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
